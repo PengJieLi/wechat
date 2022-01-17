@@ -113,7 +113,7 @@ Page({
     // setTimeout(()=>{
     //   this.handleStartClick()
     // },1000)
-    let idRandom = ~~(Math.random() * 4 + 1) //1,2,3
+    let idRandom = ~~(Math.random() * 3 + 1) //1,2,3
     this.setData({
       imgSrc: '../../images/b'+idRandom+'.jpeg'
     })

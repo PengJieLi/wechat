@@ -1,0 +1,194 @@
+page {
+  height: 100%;
+}
+
+.container {
+  /* background: #070d36; */
+  position: relative;
+  height: 100%;
+}
+
+.bg {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  /* height: 860rpx; */
+}
+
+.eat-class {
+  position: absolute;
+  top: 100rpx;
+  width: 100vw;
+  height: 100vh;
+}
+
+.eat-class .scroll-view {
+  flex-wrap: wrap;
+  padding: 10rpx;
+  height: 700rpx;
+  align-items: flex-start;
+}
+
+.eat-class .scroll-view .eat-list {
+  margin: 20rpx;
+  height: auto;
+  padding: 20rpx;
+  width: 130rpx;
+  height: 150rpx;
+}
+
+.eat-class .scroll-view .eat-list .bg-list {
+  width: 120rpx;
+  height: 100rpx;
+}
+
+
+
+
+.start-ani {
+  opacity: 0;
+  animation: scale linear 1.5s forwards;
+}
+
+.fire-box {
+  position: relative;
+  width: 600rpx;
+  height: 480rpx;
+  display: flex;
+}
+
+.fire-list {
+  /* width: 200rpx; */
+  flex-shrink: 0;
+  position: absolute;
+}
+
+.fire-icon {
+  /* position: absolute; */
+}
+
+.dot {
+  width: 6rpx;
+  height: 16rpx;
+  background: #fff;
+  opacity: .5;
+  border-radius: 4rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot-ani {
+  opacity: 0;
+  animation: dotTranY linear 1s forwards;
+}
+
+
+.start-btn {
+  position: absolute;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background: #654063;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-box-fire {
+  position: absolute;
+  top: 2%;
+  right: 0%;
+  animation: scaleDog linear 1.6s infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qianming {
+  width: 177rpx;
+  height: 66rpx;
+}
+
+.start-btn1 {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  line-height: 60rpx;
+  /* background: rgba(216, 107, 97,.8); */
+  /* color: rgba(255, 255, 255, .8); */
+  text-align: center;
+  font-size: 30rpx;
+
+}
+
+.dog {
+
+  width: 100rpx;
+  height: 142rpx;
+
+}
+
+.dog-box {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  animation: scaleDog linear 1.8s infinite;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 20rpx;
+  align-items: center;
+}
+
+@keyframes dotTranY {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-200rpx);
+    opacity: 0;
+    /* display: none; */
+  }
+}
+
+@keyframes scaleDog {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

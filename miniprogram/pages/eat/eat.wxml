@@ -1,0 +1,51 @@
+<!--miniprogram/pages/eat/eat.wxml-->
+<view class="box">
+  <!-- <image class="bg" src="../../images/bg.png"></image> -->
+  <view class="container1">
+    <!-- <view class="title">今天吃什么</view> -->
+    <!-- <view class="btn-box">
+      <view class="eat-btn" bindtap='handleStartClick'>开始</view>
+      <view class="eat-btn" bindtap='handleAddClick'>添加</view>
+    </view> -->
+    <scroll-view enable-flex="{{true}}" class="scroll-view" scroll-y='{{true}}' scroll-with-animation='{{true}}'
+      scroll-into-view='{{toView}}'>
+      <!-- {{item.class}}  -->
+      <view wx:for="{{eatList}}" id="{{item.id}}" class="eat-list {{ index == curIndex ? 'cur-list' : ''}} "
+        wx:key='index'>
+        <image src="../../images/{{item.img}}" mode='aspectFit' class="bg-list"></image>
+        <view class="list-con">
+          {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+    <view class="tips">
+      <!-- 声明: 此小程序为蛋蛋定制，仅供蛋蛋使用 !!! -->
+    </view>
+    <!-- <image src="../../images/qianming.png" class="qianming"></image> -->
+  </view>
+</view>
+
+<view class="dialog-mask" wx:if="{{isShowDialog}}">
+  <view class="content">
+    <textarea class="textarea" bindinput="bindTextAreaBlur" placeholder="请输入要添加的食物" value="{{foodCon}}"></textarea>
+    <view class="dialog-btn-box">
+      <view class="dialog-btn" bindtap="handleCancle">取消</view>
+      <view class="dialog-btn" bindtap="handleConfirm">确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 弹窗 -->
+<!-- bindtap='handleCloseEndDialog' -->
+<view class="dialog-mask end-dialog" wx:if="{{isShowEndDialog}}">
+  <view class="content">
+    <view class="list-name">
+      今天吃{{endName}}
+    </view>
+    <image mode='aspectFit' src="../../images/{{eatImgSrc}}" class="eat-img"></image>
+    <view class="end-con">
+      {{endCon}}
+    </view>
+    <button class="pay-btn" open-type="share">李公子支付</button>
+  </view>
+</view>

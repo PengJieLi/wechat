@@ -1,0 +1,36 @@
+<view class="container">
+  <image mode='aspectFill' src="{{imgSrc}}" class="bg"></image>
+
+  <view class="fire-box">
+    <view class="fire-list" style="left:{{item.left}};top:{{item.top}}" wx:for="{{fireList}}" wx:key='index'>
+      <image style="width: {{item.width}};animation-delay:{{item.second}}s;" mode='aspectFit'
+        src="../../images/fireworks{{item.id}}.png" class="fire-icon start-ani">
+      </image>
+      <!-- <view style="animation-delay:{{item.second}}s;" class="dot dot-ani"></view> -->
+    </view>
+  </view>
+
+  <!-- <view class="fire-box">
+    <image mode='aspectFit' wx:if="{{isStart==2}}" src="../../images/fireworks1.png" class="fire-icon {{ isStart==2 ? 'start-ani':'' }}">
+    </image>
+    <view wx:if="{{isStart==1}}" class="dot {{ isStart==1 ?'dot-ani':'' }}"></view>
+  </view> -->
+
+  <!-- <view class="start-btn" bindtap="handleStartClick">开启</view> -->
+
+  <view class="btn-box-fire" bindtap='handleBtnClick'>
+    <image mode='aspectFill' src="../../images/icon.png" class="start-btn1" ></image>
+    <image src="../../images/qm1.png" class="qianming"></image>
+  </view>
+
+  <!-- <view class="dog-box">
+  点我哟
+  <image src="../../images/firework/dog.png"   bindtap="handleStartClick" class="dog"></image>
+</view> -->
+
+  <!-- 开始弹窗 -->
+  <view class="dialog-mask" wx:if="{{isShowStartDialog}}" bindtap="handleCloseMask">
+    <component-eat id="eat" class="eat-class"></component-eat>
+  </view>
+
+</view>
